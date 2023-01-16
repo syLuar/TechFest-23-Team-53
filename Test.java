@@ -147,7 +147,7 @@ public class Test extends JFrame {
                 "Name:", nameField,
                 "Available Places:", placesField,
                 "Maintenance Progress:", progressField,
-                "Crime Sightings:", crimeField
+                "Time to Completion(Days):", crimeField
             };
             int option = JOptionPane.showConfirmDialog(null, message, "Add Car Park", JOptionPane.OK_CANCEL_OPTION);
             if (option == JOptionPane.OK_OPTION) {
@@ -179,7 +179,7 @@ public class Test extends JFrame {
                     "Name:", nameField,
                     "Available Places:", placesField,
                     "Maintenance Progress:", progressField,
-                    "Crime Sightings:", crimeField
+                    "Time to Completion(Days):", crimeField
                 };
                 int option = JOptionPane.showConfirmDialog(null, message, "Edit Car Park", JOptionPane.OK_CANCEL_OPTION);
                 if (option == JOptionPane.OK_OPTION) {
