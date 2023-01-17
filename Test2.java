@@ -8,8 +8,7 @@ import java.io.IOException;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;  
-// import java.io.IOException;
+import java.io.FileReader;
 import java.nio.file.Files;
 
 public class Test2 extends JFrame {
@@ -35,11 +34,9 @@ public class Test2 extends JFrame {
         //carParkModel.addRow(new Object[]{"Block 26 Jalan Membina MSCP", 50, "In Progress", 2});
         //carParkModel.addRow(new Object[]{"Block 126A Bukit Merah MSCP", 100, "Completed", 0});
         //carParkModel.addRow(new Object[]{"Block 6A Everton Park MSCP", 75, "Not Started", 1});
-        String line = "";  
-        //String splitBy = ",";  
+        String line = "";
         try   
         {  
-            //parsing a CSV file into BufferedReader class constructor  
             BufferedReader br = new BufferedReader(new FileReader("Carpark_data.csv"));  
             while ((line = br.readLine()) != null)   //returns a Boolean value  
         {  
@@ -99,9 +96,6 @@ public class Test2 extends JFrame {
             catch (Exception f){
                 f.getStackTrace();
             }
-                //catch (Exception e) {
-                //    e.getStackTrace();
-                //}
         }
     }
 
@@ -117,12 +111,10 @@ public class Test2 extends JFrame {
             try   
             {  
             String line = "";
-                //parsing a CSV file into BufferedReader class constructor  
                 BufferedReader br = new BufferedReader(new FileReader("Carpark_data.csv"));  
                 while ((line = br.readLine()) != null)   //returns a Boolean value  
             {  
                 String[] rowS = line.split(", ");    // use comma as separator  
-                //carParkModel.addRow(new Object[]{rowS[0], rowS[1], rowS[2], rowS[3]});
                 if (rowS[0].matches(remove)) {
                     continue;
                 }
@@ -134,9 +126,6 @@ public class Test2 extends JFrame {
                     catch (Exception f){
                         f.getStackTrace();
                     }
-                        //catch (Exception e) {
-                        //    e.getStackTrace();
-                        //}
             } 
             br.close();
             }   
@@ -149,7 +138,6 @@ public class Test2 extends JFrame {
             try {
                 Files.move(new File(fileNameold).toPath(), new File(fileNamenew).toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
             } catch (IOException ex) {
-                //Logger.getLogger(SomeClass.class.getName()).log(Level.SEVERE, null, ex);
                 ex.getStackTrace();
             }
         }
@@ -182,26 +170,19 @@ public class Test2 extends JFrame {
                 try   
                 {  
                 String line = "";
-                    //parsing a CSV file into BufferedReader class constructor  
                     BufferedReader br = new BufferedReader(new FileReader("Carpark_data.csv"));  
                     while ((line = br.readLine()) != null)   //returns a Boolean value  
                 {  
                     String[] rowS = line.split(", ");    // use comma as separator  
-                    //carParkModel.addRow(new Object[]{rowS[0], rowS[1], rowS[2], rowS[3]});
                     if (rowS[0].matches(remove)) {
                         try {
                             FileWriter fw = new FileWriter("Carpark_data2.csv",true);
                             fw.write(nameField.getText() + ", " + placesField.getText() + ", " + progressField.getText() + ", " + crimeField.getText() + "\n");
-                            // fw.write("\n");
                             fw.close();
                             }
                         catch (Exception f){
                             f.getStackTrace();
                         }
-                            //catch (Exception e) {
-                            //    e.getStackTrace();
-                            //}
-                        //continue;
                     }
                     else    try {
                             FileWriter fw = new FileWriter("Carpark_data2.csv",true);
@@ -211,9 +192,6 @@ public class Test2 extends JFrame {
                         catch (Exception f){
                             f.getStackTrace();
                         }
-                            //catch (Exception e) {
-                            //    e.getStackTrace();
-                            //}
                 } 
                 br.close();
                 }   
@@ -226,7 +204,6 @@ public class Test2 extends JFrame {
                 try {
                     Files.move(new File(fileNameold).toPath(), new File(fileNamenew).toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
                 } catch (IOException ex) {
-                    //Logger.getLogger(SomeClass.class.getName()).log(Level.SEVERE, null, ex);
                     ex.getStackTrace();
                 }
             }
